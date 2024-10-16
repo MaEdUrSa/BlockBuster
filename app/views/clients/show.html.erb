@@ -1,0 +1,40 @@
+<%# <p style="color: green"><%= notice %>
+<%# </p>  %>
+
+<%#= render @client %>
+
+<div>
+      <h2 class="contanier text-white text-center "> Ver Cliente</h2>
+
+      <p style="color: red" class=" col text-center"><%= notice %></p>
+
+      <div id="clients"  class = "container mt-3  mb-5  text-primary ">
+          <div class= "row  justify-content-evenly ">
+                <%# <div class="card col-12 col-sm-5 col-md-3 col-lg-3  "  %>
+                <div class="card col-12 col-sm-10 col-md-7 col-lg-7 "  
+                    style="border:2px solid Tomato; background-color:rgb(208, 211, 212);">
+                  <%# <img src="..." class="card-img-top" alt="..."> %>
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Cliente Id ==>  <%= @client.id %> </h5>
+                        
+                        <%# <p> ID    :  <%= @client.id %> </p>
+                        <p> Cliente     :  <%= @client.name%> </p>
+                        <p> Edad     :  <%= @client.age%> </p>
+                    
+                  <div class= "container  d-flex justify-content-between  gap-3 align-items-center">
+                      <%= link_to "Editar Cliente", edit_client_path(@client), class: "btn btn-success"%> 
+                      <%= link_to "Retornar Cliente", clients_path, class: "btn btn-info"%> 
+                      <%= button_to "Eliminar Cliente", @client, method: :delete, class: "btn btn-danger" %>
+
+
+                       <%= link_to "Ir a pelicula ", movies_path, class: "btn btn-secondary " %>
+                  </div>
+      <div>
+
+
+
+  <%#= link_to "Edit this client", edit_client_path(@client) %> 
+  <%#= link_to "Back to clients", clients_path %>
+
+  <%#= button_to "Destroy this client", @client, method: :delete %>
+</div>

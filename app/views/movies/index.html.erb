@@ -1,0 +1,48 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Movies" %>
+
+<h2 class="contanier text-white text-center ">Pelicula </h2>
+
+
+<div class = "container col d-flex justify-content-end mt-3 mb-3 gap-3 "> 
+        <%== pagy_bootstrap_nav(@pagy) %>
+
+    <%= link_to "Volver a cliente", clients_path, class: "btn btn-info    px-3 py-2 fw-lith   "%>
+    <%= link_to "Nueva Pelicula", new_movie_path, class: "btn btn-success px-3 py-2  fw-lith "%>
+</div>
+
+
+ <div id="movies">
+    <div class="container text-white">
+        <table class="table table-striped  text-white">
+          <thead>
+            <tr style="background-color:DodgerBlue;" class = "text-center text-white">
+              <th scope="col ">id</th>
+              <th scope="col">Name</th>
+              <th scope="col">Cliente ID</th>
+              <th scope="col">Nombre Cliente</th>
+              <th scope="col" colspan="2"></th>
+            </tr>
+          </thead>
+          <tbody  class = "text-center text-red">
+             <% @movies.each do |movie| %>
+                <%= render movie %>
+
+             <%end%>
+          </tbody>
+        </table>
+      </div>
+</div>
+
+<div class = "container d-flex justify-content-end mt-3 gap-3 my-5"> 
+   <div class = " d-flex justify-content-between "  >
+        <%# <%== pagy_bootstrap_nav(@pagy) %>
+        <%== pagy_bootstrap_nav(@pagy)%>
+
+    </div>
+    <%= link_to "Volver a cliente", clients_path, class: "btn btn-info    px-3 py-2  fw-lith "%>
+    <%= link_to "Nueva Pelicula", new_movie_path, class: "btn btn-success px-3 py-2  fw-lith "%>
+
+</div>
+

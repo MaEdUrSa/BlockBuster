@@ -1,0 +1,27 @@
+
+
+<%# <%= render @movie %>
+<h2 class="contanier text-white text-center "> Ver Pelicula</h2>
+
+<p style="color: red" class=" col text-center"><%= notice %></p>
+
+<div id="movies"  class = "container mt-3  mb-5  text-primary ">
+    <div class= "row  justify-content-evenly ">
+          <%# <div class="card col-12 col-sm-5 col-md-3 col-lg-3  "  %>
+          <div class="card col-12 col-sm-10 col-md-7 col-lg-7 "  
+              style="border:2px solid Tomato; background-color:rgb(208, 211, 212);">
+            <%# <img src="..." class="card-img-top" alt="..."> %>
+            <div class="card-body text-center">
+              <h5 class="card-title">Pelicula Id ==>  <%= @movie.id %> </h5>
+                  
+                   <p> Pelicula    :  <%= @movie.name %> </p>
+                   <p> Cliente     :  <%= @movie.client.name%> </p>
+               
+            <div class= "container  container d-flex justify-content-between  align-items-center">
+                <%= link_to "Editar Pelicula", edit_movie_path(@movie), class: "btn btn-success"%> 
+                <%= link_to "Retornar pelicula", movies_path, class: "btn btn-info"%> 
+                <%= button_to "Eliminar Pelicula", @movie, method: :delete, class: "btn btn-danger" %>
+            </div>
+<div>
+
+</div>
